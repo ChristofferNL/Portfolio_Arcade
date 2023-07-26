@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2e2ce13da322e45845809b5dc495cc, type: 3}
+  m_Name: SOPlayerAttributes
+  m_EditorClassIdentifier: 
+  PlayerVelocity: 0
+  CounterWalktime: 0
+  CounterRuntime: 0
+  MoveDirection: 0
+  GravitationalForce: 0
+  CounterJumptime: 0
+  CounterJumptimeSeconds: 0.35
+  JumpVelocity: 0.2
+  DirectionChangedMaxAirSpeed: 0.2
+  JumpStartingVelocity: 0
+  WalljumpCooldown: 0
+  WalljumpCooldownSeconds: 0.25
+  NumberOfJumps: 0
+  WalljumpsLeft: 0
+  JumpSpeed: 0.5
+  MaxspeedWalk: 0.25
+  MaxspeedRun: 0.5
+  MaxspeedGravity: -1.5
+  MaxspeedJump: 6
+  RunspeedMultiplier: 2.2
+  MovespeedMultiplier: 40
+  MoveDivider: 3
+  VerticalForceMultiplier: 25
+  Grounded: 1
+  Jumping: 0
+  SpinJumping: 0
+  Walljumping: 0
+  Walking: 0
+  Running: 0
+  MovingRight: 0
+  MovingLeft: 0
+  CanJump: 1
+  CanWalljump: 0
+  CollidingUp: 0
+  CollidingLeft: 0
+  CollidingRight: 0
+  FacingRight: 0
+  IsShooting: 0
+  CanTakeDamage: 1
+  CanActivateTeleporter: 0
+  HitPoints: 60
+  DamageCooldown: 0.4
+  DamageCooldownSeconds: 0.4
