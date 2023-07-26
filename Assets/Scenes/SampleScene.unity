@@ -7880,9 +7880,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  _moveSpeed: 250
+  _moveSpeed: 300
   _camera: {fileID: 963194227}
-  _maxMoveSpeed: 4
+  _maxMoveSpeed: 6
   _groundDrag: 30
 --- !u!1 &1680697705
 GameObject:

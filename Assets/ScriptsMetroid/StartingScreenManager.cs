@@ -46,6 +46,6 @@ public class StartingScreenManager : MonoBehaviour
     }
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }

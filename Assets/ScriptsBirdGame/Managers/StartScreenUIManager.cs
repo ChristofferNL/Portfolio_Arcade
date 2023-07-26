@@ -24,7 +24,9 @@ public class StartScreenUIManager : MonoBehaviour
     private void Start()
     {
         SettingsCanvas.gameObject.SetActive(false);
-    }
+
+		Cursor.visible = true;
+	}
 
     private void OpenSettingsMenu()
     {
