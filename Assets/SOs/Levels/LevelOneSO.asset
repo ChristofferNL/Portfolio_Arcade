@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007928eec110d5940b96807a31ab287f, type: 3}
+  m_Name: LevelOneSO
+  m_EditorClassIdentifier: 
+  StageNumber: 1
+  StarRequirements: 10270000983a00005c440000
+  LevelMusic: {fileID: 0}
+  SceneName: LevelOne

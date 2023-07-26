@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScenesMetroid/DefaultScene.unity
     guid: 2160938853b814041967c5ea85e9a07c
+  - enabled: 1
+    path: Assets/ScenesBase/LevelOne.unity
+    guid: b7aada9e123ebad4bb0aa9deee578771
+  - enabled: 1
+    path: Assets/ScenesBase/LevelThree.unity
+    guid: 709d2a9b8c1357f4bb8a218e587184e0
+  - enabled: 1
+    path: Assets/ScenesBase/LevelTwo.unity
+    guid: a93296dcda2715f4e8e8e90808f80880
+  - enabled: 1
+    path: Assets/ScenesBase/StartScreen.unity
+    guid: 6c0618962798c01489272a4e71b14c9a
+  - enabled: 1
+    path: Assets/ScenesBase/WorldMap.unity
+    guid: 2e0f92b75224ea7488a159d836650e42
   m_configObjects: {}
