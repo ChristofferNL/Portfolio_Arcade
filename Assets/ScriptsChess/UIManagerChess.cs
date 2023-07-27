@@ -90,7 +90,7 @@ public class UIManagerChess : MonoBehaviour
     {
         EffectSource.clip = ButtonSound;
         EffectSource.Play();
-        Application.Quit();
+        SceneManager.LoadScene(0);
         //UnityEditor.EditorApplication.isPlaying = false;
     }
 }
