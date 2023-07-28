@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb10c523f7d286d469a987b5d7f47f45, type: 3}
+  m_Name: GrayGolemData
+  m_EditorClassIdentifier: 
+  MoveSpeedMultiplier: 900
+  MaxMoveSpeed: 8
+  JumpDuration: 0.4
+  JumpSpeed: 1800
+  AttackCooldown: 1.2
+  AttackProjectileObject: {fileID: 5298590762127773683, guid: cad9f745870d9f448bf225d2a253d382,
+    type: 3}
+  IdleAnim: {fileID: 7400000, guid: e724ee346f18e7e43b5b92571f02faa1, type: 2}
+  WalkAnim: {fileID: 7400000, guid: 55033e9d49b386b4eade59453a1d2618, type: 2}
+  AttackAnim: {fileID: 7400000, guid: 280edba104811d04a99462046f909840, type: 2}

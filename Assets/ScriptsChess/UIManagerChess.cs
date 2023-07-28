@@ -32,7 +32,12 @@ public class UIManagerChess : MonoBehaviour
         PlayButton.onClick.AddListener(PlayGame);
     }
 
-    private void Update()
+	private void Start()
+	{
+		Cursor.visible = true;
+	}
+
+	private void Update()
     {
         if (Input.anyKeyDown && PressAnyKeyText.IsActive())
         {

@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
             _playerMove.ProcessJump(_onFoot.Jump.IsPressed());
             _playerMove.Teleport(_onFoot.Activate.IsPressed());
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene(0);
         }

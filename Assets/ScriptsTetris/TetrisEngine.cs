@@ -78,7 +78,7 @@ public class TetrisEngine : MonoBehaviour
                 nextActionMoveLeft = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             ResetNextRotation();
             if (activePiece.canRotateRight && !activePiece.hasRotated)
@@ -86,7 +86,7 @@ public class TetrisEngine : MonoBehaviour
                 nextActionRotateRight = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             ResetNextRotation();
             if (activePiece.canRotateLeft && !activePiece.hasRotated)
@@ -130,7 +130,7 @@ public class TetrisEngine : MonoBehaviour
                 rotateCooldown = rotateCooldownSeconds;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             SceneManager.LoadScene(0);
         }

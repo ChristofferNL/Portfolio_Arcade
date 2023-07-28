@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f077cbbb5af57a04690a6ae8791f3040, type: 3}
+  m_Name: BuffCrushingLanding
+  m_EditorClassIdentifier: 
+  BuffEffect: {fileID: 4271093393614929224, guid: 87ee7299dd44ed747af24dbb91bcd33b,
+    type: 3}
+  ParticleYOffset: -1
+  MoveSpeedModifier: -300
+  JumpSpeedModifier: 500
+  OnLanding: 1
+  IsStatic: 0
+  BuffEffectSound: {fileID: 8300000, guid: 59df696ff7379464ab932e681c05a940, type: 3}
