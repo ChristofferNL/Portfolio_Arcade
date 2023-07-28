@@ -1,11 +1,24 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerControllerArcade : MonoBehaviour
 {
+	public enum InfoPages
+	{
+		CV,
+		TETRIS,
+		FEJKTROID,
+		BIRDSNEST,
+		GOLEMGAME,
+		CHESS
+	}
+
 	[SerializeField] Rigidbody rb;
 
 	[SerializeField] float _moveSpeed = 5f;
@@ -17,10 +30,22 @@ public class PlayerControllerArcade : MonoBehaviour
 	[SerializeField] Material _arrowLitMaterial;
 	[SerializeField] Material _arrowUnlitMaterial;
 
+	[SerializeField] CinemachineVirtualCamera _virtualCamera;
+	[SerializeField] Canvas _cvCanvas;
+	[SerializeField] Canvas _arcadeCanvas;
+
+	[SerializeField] List<Image> _infoImages = new();
+	[SerializeField] TextMeshProUGUI _pressToPlayText;
+
 	float _horizontalInput;
 	float _VerticalInput;
 
 	Vector3 _moveDirection;
+
+	bool _isReading;
+
+	InfoPages _pages;
+	string _currentSceneToLoad = "";
 
 	private void Awake()
 	{
@@ -98,11 +123,39 @@ public class PlayerControllerArcade : MonoBehaviour
 	{
 		_horizontalInput = Input.GetAxisRaw("Horizontal");
 		_VerticalInput = Input.GetAxisRaw("Vertical");
+		if (Input.GetKeyDown(KeyCode.Tab)) ToggleReading(_pages);
+		if (Input.GetKeyDown(KeyCode.E)) PlayGame();
+	}
+
+	private void ToggleReading(InfoPages pages)
+	{
+		if (_isReading)
+		{
+			_isReading = false;
+			_cvCanvas.gameObject.SetActive(false);
+			_arcadeCanvas.gameObject.SetActive(true);
+			Cursor.visible = false;
+		}
+		else
+		{
+			_isReading = true;
+			_cvCanvas.gameObject.SetActive(true);
+			_arcadeCanvas.gameObject.SetActive(false);
+			Cursor.visible = true;
+		}
+	}
+
+	private void PlayGame()
+	{
+		if (_currentSceneToLoad.Length > 1 && !_isReading)
+		{
+			SceneManager.LoadScene(_currentSceneToLoad);
+		}
 	}
 
 	private void Move()
 	{
-		if (_horizontalInput == 0 && _VerticalInput == 0)
+		if (_horizontalInput == 0 && _VerticalInput == 0 || _isReading)
 		{
 			rb.velocity = new Vector3(0, rb.velocity.y, 0);
 			return;
@@ -134,14 +187,33 @@ public class PlayerControllerArcade : MonoBehaviour
 
 	private void RotatePlayer()
 	{
-		transform.rotation = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0);
+		if (_isReading) 
+		{
+			_virtualCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 0;
+			_virtualCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 0;
+		}
+		else
+		{
+			_virtualCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 350;
+			_virtualCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 350;
+			transform.rotation = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.TryGetComponent<StartGameZone>(out StartGameZone zone)) 
 		{
-			SceneManager.LoadScene(zone.SceneToOpenName);
+			_pages = zone.Pages;
+			_currentSceneToLoad = zone.SceneToOpenName;
+			_pressToPlayText.gameObject.SetActive(true);
 		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		_pages = InfoPages.CV;
+		_currentSceneToLoad = "";
+		_pressToPlayText.gameObject.SetActive(false);
 	}
 }
