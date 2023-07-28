@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,10 @@ public class PlayerControllerArcade : MonoBehaviour
 	[SerializeField] Camera _camera;
 	[SerializeField] float _maxMoveSpeed = 4f;
 	[SerializeField] float _groundDrag = 10;
+
+	[SerializeField] List<MeshRenderer> _arrowMeshes = new();
+	[SerializeField] Material _arrowLitMaterial;
+	[SerializeField] Material _arrowUnlitMaterial;
 
 	float _horizontalInput;
 	float _VerticalInput;
@@ -32,6 +37,7 @@ public class PlayerControllerArcade : MonoBehaviour
 		{
 			PersistentUserManager.Instance.ToggleMusic(true);
 		}
+		StartCoroutine(EntranceArrowsAnimator());
 	}
 
 	private void Update()
@@ -44,6 +50,48 @@ public class PlayerControllerArcade : MonoBehaviour
 	private void FixedUpdate()
 	{
 		Move();
+	}
+
+	private IEnumerator EntranceArrowsAnimator()
+	{
+		float timer = 0;
+		while (true)
+		{
+			timer += Time.deltaTime * 3;
+			switch (timer)
+			{
+				case < 1:
+					_arrowMeshes[0].material = _arrowLitMaterial;
+					_arrowMeshes[1].material = _arrowUnlitMaterial;
+					_arrowMeshes[2].material = _arrowUnlitMaterial;
+					_arrowMeshes[3].material = _arrowUnlitMaterial;
+					break;
+				case >= 1 and < 2:
+					_arrowMeshes[0].material = _arrowLitMaterial;
+					_arrowMeshes[1].material = _arrowLitMaterial;
+					_arrowMeshes[2].material = _arrowUnlitMaterial;
+					_arrowMeshes[3].material = _arrowUnlitMaterial;
+					break;
+				case >= 2 and < 3:
+					_arrowMeshes[0].material = _arrowLitMaterial;
+					_arrowMeshes[1].material = _arrowLitMaterial;
+					_arrowMeshes[2].material = _arrowLitMaterial;
+					_arrowMeshes[3].material = _arrowUnlitMaterial;
+					break;
+				case >= 3 and < 4:
+					_arrowMeshes[0].material = _arrowLitMaterial;
+					_arrowMeshes[1].material = _arrowLitMaterial;
+					_arrowMeshes[2].material = _arrowLitMaterial;
+					_arrowMeshes[3].material = _arrowLitMaterial;
+					break;
+				case >= 4:
+					timer = 0;
+					break;
+				default:
+					break;
+			}
+			yield return null;
+		}
 	}
 
 	private void MyInput()
