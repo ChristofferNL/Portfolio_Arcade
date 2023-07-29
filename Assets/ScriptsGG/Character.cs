@@ -26,7 +26,7 @@ public abstract class Character : AnimatedObjectGG
     public bool canJump;
     public bool currentlyJumping;
     private bool isMoving;
-    private bool isCurrentGolem;
+    public bool isCurrentGolem;
     public bool isGrounded;
     public bool isAttacking;
     protected bool isMovingRight;
@@ -48,7 +48,7 @@ public abstract class Character : AnimatedObjectGG
             {ObjectStates.AttackOne, GolemDataObject.AttackAnim }
         };
         JumpDurationStartTime = GolemDataObject.JumpDuration;
-        jumpDuration = GolemDataObject.JumpDuration;
+        jumpDuration = 0;
         attackCooldownTimer = GolemDataObject.AttackCooldown;
         attackSpawnLocation = GameObject.Find("AttackBoxLocation").transform;
         isMovingRight = true;
@@ -139,9 +139,12 @@ public abstract class Character : AnimatedObjectGG
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out ray, groundCheckDistance)) 
         {
-            isGrounded = true;
-            canJump = true;
-            jumpDuration = JumpDurationStartTime;
+            if (ray.collider.gameObject.CompareTag("Ground"))
+            {
+				isGrounded = true;
+				canJump = true;
+				jumpDuration = JumpDurationStartTime;
+			}
         }
         else
         {
@@ -244,7 +247,10 @@ public abstract class Character : AnimatedObjectGG
     }
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (!collision.gameObject.CompareTag("Ground") || !isCurrentGolem)
+        {
+            return;
+        }
         if (velocityBeforePhysicsUpdate.y < -12f && stateMachine.ActiveBuff == CharacterStateMachine.GolemBuffs.CrushingLanding && groundExplosionsCounter == 0)
         {
             velocityBeforePhysicsUpdate.y = 0;
