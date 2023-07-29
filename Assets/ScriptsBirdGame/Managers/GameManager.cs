@@ -166,6 +166,12 @@ public class GameManager : MonoBehaviour
         stageCompletedText.text = $"Stage {PersistentUserManager.Instance.currentLevelDataSO.StageNumber} Completed";
         EventManager.Instance.EventFinishRound.RemoveListener(EndRound);
         gameIsRunning = false;
+        GameObject controller = FindObjectOfType<PlayerController>().gameObject;
+        if (controller != null)
+        {
+            controller.GetComponent<Rigidbody>().isKinematic = true;
+        }
+
     }
 
     private float CalculateFinalScore()
