@@ -142,6 +142,34 @@ public class PlayerControllerArcade : MonoBehaviour
 			_cvCanvas.gameObject.SetActive(true);
 			_arcadeCanvas.gameObject.SetActive(false);
 			Cursor.visible = true;
+			foreach (var page in _infoImages)
+			{
+				page.gameObject.SetActive(false);
+			}
+			switch (pages)
+			{
+				case InfoPages.CV:
+					_infoImages[0].gameObject.SetActive(true);
+					_infoImages[1].gameObject.SetActive(true);
+					break;
+				case InfoPages.TETRIS:
+					_infoImages[2].gameObject.SetActive(true);
+					break;
+				case InfoPages.FEJKTROID:
+					_infoImages[3].gameObject.SetActive(true);
+					break;
+				case InfoPages.BIRDSNEST:
+					_infoImages[4].gameObject.SetActive(true);
+					break;
+				case InfoPages.GOLEMGAME:
+					_infoImages[5].gameObject.SetActive(true);
+					break;
+				case InfoPages.CHESS:
+					_infoImages[6].gameObject.SetActive(true);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 
