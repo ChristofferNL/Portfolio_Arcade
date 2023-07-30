@@ -9,36 +9,36 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/ScenesTetris/MainSceneTetris.unity
+    path: Assets/Scenes/ScenesTetris/MainSceneTetris.unity
     guid: 46a5d74096b4b1443a614dcd3303dbe7
   - enabled: 1
-    path: Assets/ScenesMetroid/StartingScreenScene.unity
+    path: Assets/Scenes/ScenesMetroid/StartingScreenScene.unity
     guid: df526496dfefbee4b998cc2ddad57dcb
   - enabled: 1
-    path: Assets/ScenesMetroid/DefaultScene.unity
+    path: Assets/Scenes/ScenesMetroid/DefaultScene.unity
     guid: 2160938853b814041967c5ea85e9a07c
   - enabled: 1
-    path: Assets/ScenesBase/LevelOne.unity
+    path: Assets/Scenes/ScenesBirdGame/LevelOne.unity
     guid: b7aada9e123ebad4bb0aa9deee578771
   - enabled: 1
-    path: Assets/ScenesBase/LevelThree.unity
+    path: Assets/Scenes/ScenesBirdGame/LevelThree.unity
     guid: 709d2a9b8c1357f4bb8a218e587184e0
   - enabled: 1
-    path: Assets/ScenesBase/LevelTwo.unity
+    path: Assets/Scenes/ScenesBirdGame/LevelTwo.unity
     guid: a93296dcda2715f4e8e8e90808f80880
   - enabled: 1
-    path: Assets/ScenesBase/StartScreen.unity
+    path: Assets/Scenes/ScenesBirdGame/StartScreen.unity
     guid: 6c0618962798c01489272a4e71b14c9a
   - enabled: 1
-    path: Assets/ScenesBase/WorldMap.unity
+    path: Assets/Scenes/ScenesBirdGame/WorldMap.unity
     guid: 2e0f92b75224ea7488a159d836650e42
   - enabled: 1
-    path: Assets/ScenesChess/Example Scene 4.unity
+    path: Assets/Scenes/ScenesChess/Example Scene 4.unity
     guid: 1ac8801de019cc841a5210a18f510a8a
   - enabled: 1
-    path: Assets/ScenesChess/SampleSceneChess.unity
+    path: Assets/Scenes/ScenesChess/SampleSceneChess.unity
     guid: 50efe61bebd81934c966fe07b875cbd7
   - enabled: 1
-    path: Assets/ScenesGG/SampleSceneGG.unity
+    path: Assets/Scenes/ScenesGG/SampleSceneGG.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   m_configObjects: {}
